@@ -35,7 +35,7 @@ label explore(start, *args, transition=None, return_label=None, **kwargs):
     with transition
     $ codes = []
     $ explored = []
-    $ renpy.call_screen(start, args, kwargs)
+    $ renpy.call_screen(start, *args, **kwargs)
     hide screen quick_menu
     return return_label
 
@@ -43,7 +43,7 @@ default jumpnum = 0
 label next_location(loc, *args, transition=Fade(0.25, 0.0, 0.25), **kwargs):
     scene expression "bg [loc]"
     with transition
-    $ renpy.call_screen(loc, args, kwargs)
+    $ renpy.call_screen(loc, *args, **kwargs)
     return
 
 default inventory = []
@@ -68,9 +68,9 @@ screen code_input(limit_input=False, show_code_length=True):
     add "vignette"
     text "[dial]" xcenter 640 ycenter 140
     button xcenter 750 ycenter 580 xysize (100, 100) action [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]
-    text "入力\nENTER" xcenter 750 ycenter 580
+    text "ENTER" xcenter 750 ycenter 580
     button xcenter 530 ycenter 580 xysize (100, 100) action SetVariable("dial", "")
-    text "クリア\nCLEAR" xcenter 530 ycenter 580
+    text "CLEAR" xcenter 530 ycenter 580
     button xcenter 640 ycenter 580 xysize (100, 100) action [SetVariable("dial", dial + "0"), If(limit_input, If(len(dial) >= len(code), [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]))]
     text "0" xcenter 640 ycenter 580
     button xcenter 530 ycenter 470 xysize (100, 100) action [SetVariable("dial", dial + "1"), If(limit_input, If(len(dial) >= len(code), [If(dial == code, AddToSet(codes, to_input)), Call("next_location", prev_loc, transition=False)]))]
