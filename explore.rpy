@@ -39,7 +39,6 @@ label explore(start, *args, transition=None, return_label=None, **kwargs):
     hide screen quick_menu
     return return_label
 
-default jumpnum = 0
 label next_location(loc, *args, transition=Fade(0.25, 0.0, 0.25), **kwargs):
     scene expression "bg [loc]"
     with transition
