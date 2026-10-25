@@ -324,7 +324,7 @@ init -100 python:
             return "label" if renpy.has_label(value) else "item"
         return "action"
 
-    class _ExploreHotspot:
+    class _ExploreHotspot(python_object):
         __slots__ = ("kind", "text", "label", "props", "shortcut", "show_shortcut",
                      "map_loc", "action", "sensitive")
 
