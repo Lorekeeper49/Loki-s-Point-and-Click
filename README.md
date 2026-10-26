@@ -8,7 +8,7 @@ This is a proper working Point-and-Click system that you can use for certain sec
 
 Locations are written with a custom `location` statement instead of hand-built screens. Each location gets clickable hotspots, keyboard shortcuts with a shortcut bar along the bottom of the screen, and an optional minimap that opens when you hover the MAP button in the bottom-right corner. Movement and interactions can be locked behind conditions (like having an item) or behind a keypad code.
 
-Requires Ren'Py 8.
+Requires Ren'Py 8.  ~~Unless you want to do a bunch of editing to remove all the Python3 syntax and other stuff that versions under Ren'py 8 doesn't support.~~
 
 If you have any issues or suggestions for what should be added to these scripts and assets or the information area, list them in the issues tab
 
